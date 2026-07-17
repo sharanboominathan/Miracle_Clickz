@@ -70,14 +70,14 @@ export default function Stats() {
         title="Trusted by a Thousand Love Stories"
         reveal="blur"
       />
-      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-10 gap-y-16 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-14 sm:gap-x-10 sm:gap-y-16 lg:grid-cols-4">
         {STATS.map((s) => (
           <div key={s.label} className="flex flex-col">
-            <div className="flex items-baseline">
-              <span className="mc-stat-num font-serif text-6xl font-light tabular-nums text-white md:text-8xl">
+            <div className="flex flex-wrap items-baseline">
+              <span className="mc-stat-num font-serif text-4xl font-light tabular-nums text-white sm:text-6xl md:text-8xl">
                 0
               </span>
-              <span className="ml-1 font-serif text-3xl text-gold md:text-5xl">
+              <span className="ml-1 font-serif text-xl text-gold sm:text-3xl md:text-5xl">
                 {s.suffix}
               </span>
             </div>

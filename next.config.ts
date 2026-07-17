@@ -18,6 +18,11 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true, // next/image optimization API isn't available on static hosts
   },
+  env: {
+    // next/image and next/link auto-prefix basePath, but plain <img> tags (e.g. in
+    // CinemaArt.tsx) don't — expose it so they can prefix their own src manually.
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
 };
 
 export default nextConfig;

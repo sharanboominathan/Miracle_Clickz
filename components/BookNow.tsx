@@ -65,15 +65,17 @@ export default function BookNow() {
 
       <div className="relative mx-auto grid max-w-6xl gap-8 md:grid-cols-2 md:items-stretch">
         {/* sample editorial photo (public/images/contact-editorial.jpg) — swap with real client imagery */}
-        <div className="relative order-1 aspect-[4/5] overflow-hidden rounded-sm md:order-none md:aspect-auto">
-          <Image
-            src="/images/contact-editorial.jpg"
-            alt=""
-            fill
-            sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-jet via-jet/10 to-transparent" />
+        <div className="relative order-1 aspect-[4/5] md:order-none md:aspect-auto">
+          <div className="absolute inset-0 overflow-hidden rounded-sm">
+            <Image
+              src="/images/contact-editorial.jpg"
+              alt=""
+              fill
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-jet via-jet/10 to-transparent" />
+          </div>
           <div className="pointer-events-none absolute -bottom-3 -right-3 h-full w-full rounded-sm border border-gold/20" />
         </div>
 

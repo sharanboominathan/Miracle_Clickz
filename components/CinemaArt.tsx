@@ -51,7 +51,7 @@ export default function CinemaArt({
         <>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={image}
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${image}`}
             alt=""
             loading="lazy"
             className="absolute inset-0 h-full w-full object-cover"
