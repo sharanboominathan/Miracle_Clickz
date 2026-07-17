@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { TESTIMONIALS } from "@/lib/data";
 import SectionHeading from "./SectionHeading";
 
@@ -49,7 +50,16 @@ export default function Testimonials() {
   const doubled = [...TESTIMONIALS, ...TESTIMONIALS];
   return (
     <section className="relative overflow-hidden py-28 md:py-44">
-      <div className="px-6">
+      {/* sample editorial photo as a subtle backdrop — swap with real client imagery */}
+      <Image
+        src="/images/testimonial-editorial.jpg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-cover opacity-[0.14]"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-jet via-jet/90 to-jet" />
+      <div className="relative px-6">
         <SectionHeading kicker="Kind Words" title="Loved by Couples" reveal="blur" />
       </div>
       <div className="marquee-paused relative">

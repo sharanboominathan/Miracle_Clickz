@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { gsap, useGSAP, prefersReducedMotion } from "@/lib/gsap";
 import SectionHeading from "./SectionHeading";
 
@@ -62,7 +63,21 @@ export default function BookNow() {
     <section ref={root} id="book" className="relative px-6 py-28 md:py-44">
       <SectionHeading kicker="Begin Your Story" title="Book Your Date" reveal="blur" />
 
-      <div className="mc-book-panel relative mx-auto max-w-3xl">
+      <div className="relative mx-auto grid max-w-6xl gap-8 md:grid-cols-2 md:items-stretch">
+        {/* sample editorial photo (public/images/contact-editorial.jpg) — swap with real client imagery */}
+        <div className="relative order-1 aspect-[4/5] overflow-hidden rounded-sm md:order-none md:aspect-auto">
+          <Image
+            src="/images/contact-editorial.jpg"
+            alt=""
+            fill
+            sizes="(min-width: 768px) 50vw, 100vw"
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-jet via-jet/10 to-transparent" />
+          <div className="pointer-events-none absolute -bottom-3 -right-3 h-full w-full rounded-sm border border-gold/20" />
+        </div>
+
+        <div className="mc-book-panel relative order-2 md:order-none">
         {/* animated gold border */}
         <div
           className="mc-book-border absolute -inset-px rounded-sm opacity-60"
@@ -73,7 +88,7 @@ export default function BookNow() {
           }}
           aria-hidden="true"
         />
-        <div className="glass relative rounded-sm p-8 md:p-12">
+        <div className="glass relative h-full rounded-sm p-8 md:p-12">
           {!sent ? (
             <form className="mc-book-inner flex flex-col gap-6" onSubmit={submit}>
               <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -158,6 +173,7 @@ export default function BookNow() {
               </p>
             </div>
           )}
+        </div>
         </div>
       </div>
     </section>

@@ -12,6 +12,9 @@ const LINES = [
   "We make cinema out of your truth.",
 ];
 
+// two sample photos (portrait "tight" crop + "wide" crop), alternated across the story beats
+const STORY_IMAGES = ["/images/story-wide.jpg", "/images/story-tight.jpg"];
+
 export default function Story() {
   const root = useRef<HTMLElement>(null);
 
@@ -143,6 +146,7 @@ export default function Story() {
                       hue={[38, 205, 330, 160, 45][i]}
                       hue2={[220, 40, 45, 40, 300][i]}
                       seed={i + 7}
+                      image={STORY_IMAGES[i % STORY_IMAGES.length]}
                       className="aspect-[4/5] rounded-sm"
                     />
                     <div className="absolute -bottom-3 -right-3 h-full w-full rounded-sm border border-gold/20" />

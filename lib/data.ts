@@ -22,19 +22,30 @@ export const CATEGORIES = [
   "Commercial",
 ] as const;
 
+// 6 sample portfolio photos, repeated to cover all 12 entries — swap each with real client imagery.
+const PORTFOLIO_IMAGES = [
+  "/images/portfolio-1.jpg",
+  "/images/portfolio-2.jpg",
+  "/images/portfolio-3.jpg",
+  "/images/portfolio-4.jpg",
+  "/images/portfolio-5.jpg",
+  "/images/portfolio-6.jpg",
+];
+const portfolioImage = (i: number) => PORTFOLIO_IMAGES[i % PORTFOLIO_IMAGES.length];
+
 export const PORTFOLIO: PortfolioItem[] = [
-  { id: "aisha-rohan", title: "Aisha & Rohan", category: "Wedding", location: "Udaipur Palace", hue: 38, hue2: 6, image: "https://picsum.photos/id/1011/900/1200" },
-  { id: "meera-arjun", title: "Meera & Arjun", category: "Pre Wedding", location: "Santorini", hue: 205, hue2: 38, image: "https://picsum.photos/id/1015/900/1200" },
-  { id: "sana-vikram", title: "Sana & Vikram", category: "Engagement", location: "Jaipur", hue: 330, hue2: 38, image: "https://picsum.photos/id/1016/900/1200" },
-  { id: "little-aarav", title: "Little Aarav", category: "Baby Shoot", location: "Studio One", hue: 28, hue2: 180, image: "https://picsum.photos/id/1018/900/1200" },
-  { id: "expecting-joy", title: "Expecting Joy", category: "Maternity", location: "Golden Hour Fields", hue: 45, hue2: 320, image: "https://picsum.photos/id/1024/900/1200" },
-  { id: "kanya-daan", title: "Kanya Daan", category: "Traditional", location: "Chennai", hue: 12, hue2: 45, image: "https://picsum.photos/id/1027/900/1200" },
-  { id: "stolen-glances", title: "Stolen Glances", category: "Candid", location: "Goa Shores", hue: 190, hue2: 30, image: "https://picsum.photos/id/1035/900/1200" },
-  { id: "above-the-vows", title: "Above the Vows", category: "Drone", location: "Kerala Backwaters", hue: 160, hue2: 40, image: "https://picsum.photos/id/1040/900/1200" },
-  { id: "couture-noir", title: "Couture Noir", category: "Fashion", location: "Mumbai", hue: 270, hue2: 40, image: "https://picsum.photos/id/1043/900/1200" },
-  { id: "maison-dor", title: "Maison d'Or", category: "Commercial", location: "Dubai", hue: 42, hue2: 220, image: "https://picsum.photos/id/1047/900/1200" },
-  { id: "riya-kabir", title: "Riya & Kabir", category: "Wedding", location: "Lake Como", hue: 215, hue2: 42, image: "https://picsum.photos/id/1050/900/1200" },
-  { id: "desert-serenade", title: "Desert Serenade", category: "Pre Wedding", location: "Jaisalmer Dunes", hue: 32, hue2: 265, image: "https://picsum.photos/id/1056/900/1200" },
+  { id: "aisha-rohan", title: "Aisha & Rohan", category: "Wedding", location: "Udaipur Palace", hue: 38, hue2: 6, image: portfolioImage(0) },
+  { id: "meera-arjun", title: "Meera & Arjun", category: "Pre Wedding", location: "Santorini", hue: 205, hue2: 38, image: portfolioImage(1) },
+  { id: "sana-vikram", title: "Sana & Vikram", category: "Engagement", location: "Jaipur", hue: 330, hue2: 38, image: portfolioImage(2) },
+  { id: "little-aarav", title: "Little Aarav", category: "Baby Shoot", location: "Studio One", hue: 28, hue2: 180, image: portfolioImage(3) },
+  { id: "expecting-joy", title: "Expecting Joy", category: "Maternity", location: "Golden Hour Fields", hue: 45, hue2: 320, image: portfolioImage(4) },
+  { id: "kanya-daan", title: "Kanya Daan", category: "Traditional", location: "Chennai", hue: 12, hue2: 45, image: portfolioImage(5) },
+  { id: "stolen-glances", title: "Stolen Glances", category: "Candid", location: "Goa Shores", hue: 190, hue2: 30, image: portfolioImage(6) },
+  { id: "above-the-vows", title: "Above the Vows", category: "Drone", location: "Kerala Backwaters", hue: 160, hue2: 40, image: portfolioImage(7) },
+  { id: "couture-noir", title: "Couture Noir", category: "Fashion", location: "Mumbai", hue: 270, hue2: 40, image: portfolioImage(8) },
+  { id: "maison-dor", title: "Maison d'Or", category: "Commercial", location: "Dubai", hue: 42, hue2: 220, image: portfolioImage(9) },
+  { id: "riya-kabir", title: "Riya & Kabir", category: "Wedding", location: "Lake Como", hue: 215, hue2: 42, image: portfolioImage(10) },
+  { id: "desert-serenade", title: "Desert Serenade", category: "Pre Wedding", location: "Jaisalmer Dunes", hue: 32, hue2: 265, image: portfolioImage(11) },
 ];
 
 export const SERVICES = [
@@ -57,13 +68,14 @@ export const STATS = [
   { value: 50, suffix: "+", label: "Destinations" },
 ];
 
+// reuses the same 6 sample photos as the portfolio, offset so the mix feels different by the time visitors scroll here
 export const FILMS = [
-  { title: "The Palace Vows", tag: "Feature Film", runtime: "4:12", hue: 38, image: "https://picsum.photos/id/1060/900/1350" },
-  { title: "Monsoon Serenade", tag: "Teaser", runtime: "1:08", hue: 200, image: "https://picsum.photos/id/1062/900/1350" },
-  { title: "Two Tides", tag: "Feature Film", runtime: "5:47", hue: 175, image: "https://picsum.photos/id/1067/900/1350" },
-  { title: "Gold Hour", tag: "Highlight", runtime: "2:31", hue: 45, image: "https://picsum.photos/id/1074/900/1350" },
-  { title: "Midnight Mandap", tag: "Feature Film", runtime: "6:02", hue: 280, image: "https://picsum.photos/id/1080/900/1350" },
-  { title: "First Light", tag: "Teaser", runtime: "0:59", hue: 15, image: "https://picsum.photos/id/1084/900/1350" },
+  { title: "The Palace Vows", tag: "Feature Film", runtime: "4:12", hue: 38, image: portfolioImage(3) },
+  { title: "Monsoon Serenade", tag: "Teaser", runtime: "1:08", hue: 200, image: portfolioImage(4) },
+  { title: "Two Tides", tag: "Feature Film", runtime: "5:47", hue: 175, image: portfolioImage(5) },
+  { title: "Gold Hour", tag: "Highlight", runtime: "2:31", hue: 45, image: portfolioImage(0) },
+  { title: "Midnight Mandap", tag: "Feature Film", runtime: "6:02", hue: 280, image: portfolioImage(1) },
+  { title: "First Light", tag: "Teaser", runtime: "0:59", hue: 15, image: portfolioImage(2) },
 ];
 
 export const TESTIMONIALS = [
@@ -100,12 +112,12 @@ export const FAQS = [
 ];
 
 export const INSTAGRAM = [
-  { hue: 40, h: "tall", likes: "12.4k", image: "https://picsum.photos/id/1003/700/1000" },
-  { hue: 200, h: "short", likes: "8.1k", image: "https://picsum.photos/id/1005/700/700" },
-  { hue: 330, h: "mid", likes: "15.2k", image: "https://picsum.photos/id/1008/700/850" },
-  { hue: 170, h: "short", likes: "6.7k", image: "https://picsum.photos/id/1012/700/700" },
-  { hue: 25, h: "mid", likes: "21.9k", image: "https://picsum.photos/id/1013/700/850" },
-  { hue: 270, h: "tall", likes: "9.3k", image: "https://picsum.photos/id/1019/700/1000" },
-  { hue: 45, h: "short", likes: "11.5k", image: "https://picsum.photos/id/1021/700/700" },
-  { hue: 210, h: "mid", likes: "7.8k", image: "https://picsum.photos/id/1023/700/850" },
+  { hue: 40, h: "tall", likes: "12.4k", image: "/images/gallery-1.jpg" },
+  { hue: 200, h: "short", likes: "8.1k", image: "/images/gallery-2.jpg" },
+  { hue: 330, h: "mid", likes: "15.2k", image: "/images/gallery-3.jpg" },
+  { hue: 170, h: "short", likes: "6.7k", image: "/images/gallery-4.jpg" },
+  { hue: 25, h: "mid", likes: "21.9k", image: "/images/gallery-5.jpg" },
+  { hue: 270, h: "tall", likes: "9.3k", image: "/images/gallery-6.jpg" },
+  { hue: 45, h: "short", likes: "11.5k", image: "/images/gallery-7.jpg" },
+  { hue: 210, h: "mid", likes: "7.8k", image: "/images/gallery-8.jpg" },
 ];
